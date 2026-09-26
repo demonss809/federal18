@@ -860,7 +860,7 @@ la escuela ests en proceso de  votaciones
 ========================= -->
 
 <div id="avisos" class="page">
-
+<button onclick="cambiarAvisos()">🔐 CAMBIAR AVISO</button>
 <section class="content">
 
 <h2 class="title">
@@ -1196,6 +1196,22 @@ function enviarQueja(event){
 }
 
 </script>
+<script>
+function cambiarAvisos() {
+    const codigo = prompt("🔐 Ingresa el código:");
 
+    if (codigo !== "1818") {
+        alert("❌ Código incorrecto");
+        return;
+    }
+
+    const nuevoAviso = prompt("📢 Escribe el nuevo aviso:");
+
+    if (nuevoAviso && nuevoAviso.trim() !== "") {
+        document.querySelector("#avisos p").textContent = nuevoAviso;
+        alert("✅ Aviso cambiado");
+    }
+}
+</script>
 </body>
 </html>
