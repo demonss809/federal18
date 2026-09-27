@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+#<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -1217,7 +1217,7 @@ function cambiarAvisos() {
 function cambiarCalendario() {
     const codigo = prompt("🔐 Ingresa el código:");
 
-    if (codigo !== "1820") {
+    if (codigo !== "2045") {
         alert("❌ Código incorrecto");
         return;
     }
@@ -1225,7 +1225,9 @@ function cambiarCalendario() {
     const nuevoCalendario = prompt("📅 Escribe el nuevo calendario:");
 
     if (nuevoCalendario && nuevoCalendario.trim() !== "") {
-        document.querySelector("#calendario .line").textContent = nuevoCalendario;
+        document.querySelector("#calendario .event").innerHTML =
+            "<div class='date'>" + nuevoCalendario + "</div>";
+
         alert("✅ Calendario cambiado");
     }
 }
