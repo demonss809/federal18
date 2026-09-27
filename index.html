@@ -1240,16 +1240,20 @@ function cambiarAvisos() {
 function cambiarCalendario() {
     const codigo = prompt("🔐 Ingresa el código:");
 
-    if (codigo !== "2045") {
+    if (codigo !== "1819") {
         alert("❌ Código incorrecto");
         return;
     }
 
-    const nuevoCalendario = prompt("📅 Escribe el nuevo calendario:");
+    const nuevoCalendario = prompt("📅 Escribe el nuevo calendario completo:");
 
     if (nuevoCalendario && nuevoCalendario.trim() !== "") {
-        document.querySelector("#calendario .event").innerHTML =
-            "<div class='date'>" + nuevoCalendario + "</div>";
+        document.querySelector("#calendario .content").innerHTML =
+            "<h2 class='title'>Calendario escolar</h2>" +
+            "<div class='line'></div>" +
+            "<div class='event'>" +
+            "<p>" + nuevoCalendario.replace(/\n/g, "<br>") + "</p>" +
+            "</div>";
 
         alert("✅ Calendario cambiado");
     }
