@@ -787,7 +787,7 @@ function mostrarHorario() {
 ========================= -->
 
 <div id="calendario" class="page">
-
+<button onclick="cambiarCalendario()">📅 Cambiar calendario</button>
 <section class="content">
 
 <h2 class="title">
@@ -1210,6 +1210,23 @@ function cambiarAvisos() {
     if (nuevoAviso && nuevoAviso.trim() !== "") {
         document.querySelector("#avisos p").textContent = nuevoAviso;
         alert("✅ Aviso cambiado");
+    }
+}
+</script>
+<script>
+function cambiarCalendario() {
+    const codigo = prompt("🔐 Ingresa el código:");
+
+    if (codigo !== "1818") {
+        alert("❌ Código incorrecto");
+        return;
+    }
+
+    const nuevoCalendario = prompt("📅 Escribe el nuevo calendario:");
+
+    if (nuevoCalendario && nuevoCalendario.trim() !== "") {
+        document.querySelector("#calendario .line").textContent = nuevoCalendario;
+        alert("✅ Calendario cambiado");
     }
 }
 </script>
